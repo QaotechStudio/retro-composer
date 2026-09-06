@@ -47,7 +47,7 @@ function preload() {
 function setup() {
 	// create the canvas
 	let canvas = createCanvas(windowWidth, windowHeight);
-
+	
 	// setting font
 	textFont('VT323', 40);
 	createElements();
@@ -142,7 +142,7 @@ function createElements() {
 	melodiesSelect = createSelect();
 	melodiesSelect.position(10, 10);
 
-
+	
 	console.log("Read melodies from json");
 	let melodiesData = melodies['melodies'];
 
@@ -181,10 +181,10 @@ function addToList() {
 	let noteValue = radioNotes.value();
 	let octaveValue = radioOctave.value();
 
-
+	
 	let e = new Entry(durationValue, noteValue, octaveValue);
 	notesList.push(e);
-
+	
 	let textAreaValue = textArea.value();
 	if(notesList.length > 0) {
 		textAreaValue += " " + e.getText();
@@ -274,7 +274,7 @@ class Player {
 	playNote() {
 		console.log("PLAY NOTE");
 		let note = this.tune.getNote();
-
+		
 		this.oscillator && this.oscillator.stop();
 
 		this.oscillator = this.context.createOscillator();
